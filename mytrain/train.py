@@ -41,8 +41,9 @@ class CurveConfig(Config):
     # Image mean (default RGB)
     MEAN_PIXEL = np.array([128])
 
-    # Use smaller anchors because our image and objects are small
-    RPN_ANCHOR_SCALES = (8, 16, 32, 64, 128)  # anchor side in pixels
+    # Set according to the kmeans result
+    RPN_ANCHOR_SCALES = (70, 96, 110, 128, 150)  # anchor side in pixels
+    RPN_ANCHOR_RATIOS = [1.2, 1.35, 1.5]
 
     # Reduce training ROIs per image because the images are small and have
     # few objects. Aim to allow ROI sampling to pick 33% positive ROIs.

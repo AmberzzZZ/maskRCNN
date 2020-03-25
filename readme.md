@@ -9,6 +9,7 @@
 
     3. load pretrained coco weights的时候
     要additonal exclude掉第一层权重，因为INPUT_SHAPE不一样
+    如果RPN_ANCHOR相关参数改了，还要additonal exclude掉'rpn_model'层
 
     4. visualize.display_instances
     因为plt.show需要三通道的输入，所以先把灰度图转成3通道
@@ -49,4 +50,23 @@
     RPN用了五个尺度的特征层，因此RPN_ANCHOR_SCALES的shape必须有五个元素
 
 
+## anchors聚类
+    数据集中mask尺寸比较特殊，用yolo_kmeans跑了下聚类
+    相应要修改config中的RPN_ANCHOR_SCALES和RPN_ANCHOR_RATIOS
+    load pretrained coco weights的时候，要additonal exclude掉'rpn_model'层
+
+
+## warning
+    "Converting sparse IndexedSlices to a dense Tensor of unknown shape. "
+    [参考](https://github.com/matterport/Mask_RCNN/issues/749)
+
+
+## todoList
+    1. model.train: 
+    custom callbacks，不知道有哪些在训练过程中值得关注的指标
+    2. model
+    custom losses: unbalance for class branch & mixed loss for mask branch
+
+
     
+

@@ -583,7 +583,7 @@ def unmold_mask(mask, bbox, image_shape):
 
 def generate_anchors(scales, ratios, shape, feature_stride, anchor_stride):
     """
-    scales: 1D array of anchor sizes in pixels. Example: [32, 64, 128]
+    scales: 1D array of anchor sizes in pixels. Example: [32, 64, 128]    amber: with regard to origin map?
     ratios: 1D array of anchor ratios of width/height. Example: [0.5, 1, 2]
     shape: [height, width] spatial shape of the feature map over which
             to generate anchors.
