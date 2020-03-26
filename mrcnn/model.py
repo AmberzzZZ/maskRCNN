@@ -2276,6 +2276,8 @@ class MaskRCNN():
     def train(self, train_dataset, val_dataset, learning_rate, epochs, layers,
               augmentation=None, custom_callbacks=None, no_augmentation_sources=None):
         """Train the model.
+        train_dataset, val_dataset: Training and validation Dataset objects.
+        learning_rate: The learning rate to train with
         epochs: Number of training epochs. Note that previous training epochs
                 are considered to be done alreay, so this actually determines
                 the epochs to train in total rather than in this particaular

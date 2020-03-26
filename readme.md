@@ -9,7 +9,10 @@
 
     3. load pretrained coco weights的时候
     要additonal exclude掉第一层权重，因为INPUT_SHAPE不一样
+<<<<<<< HEAD
     如果RPN_ANCHOR相关参数改了，还要additonal exclude掉'rpn_model'层
+=======
+>>>>>>> c1554cb631775375c34ef017ddabe751994e2c1d
 
     4. visualize.display_instances
     因为plt.show需要三通道的输入，所以先把灰度图转成3通道
@@ -50,6 +53,7 @@
     RPN用了五个尺度的特征层，因此RPN_ANCHOR_SCALES的shape必须有五个元素
 
 
+<<<<<<< HEAD
 ## anchors聚类
     数据集中mask尺寸比较特殊，用yolo_kmeans跑了下聚类
     相应要修改config中的RPN_ANCHOR_SCALES和RPN_ANCHOR_RATIOS
@@ -70,3 +74,6 @@
 
     
 
+=======
+    
+>>>>>>> c1554cb631775375c34ef017ddabe751994e2c1d
